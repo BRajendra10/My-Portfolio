@@ -1,6 +1,4 @@
-/* ============================= */
 /* 1. RESET */
-/* ============================= */
 
 *,
 *::before,
@@ -10,7 +8,8 @@
   box-sizing: border-box;
 }
 
-ul, ol {
+ul,
+ol {
   list-style: none;
 }
 
@@ -19,10 +18,25 @@ a {
   color: inherit;
 }
 
+body {
+  padding: 1rem;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
 
-/* ============================= */
+/* Make ASCII logo scrollable on small screens instead of breaking layout */
+.ascii-logo {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.command-name,
+.social-label {
+  display: inline-block;
+  width: 80px;
+}
+
 /* 2. FONTS */
-/* ============================= */
 
 @font-face {
   font-family: "JetBrainsMono";
@@ -40,10 +54,7 @@ a {
   font-display: swap;
 }
 
-
-/* ============================= */
 /* 3. ROOT DESIGN TOKENS */
-/* ============================= */
 
 :root {
   /* Backgrounds */
@@ -102,27 +113,25 @@ a {
   --bg-soft: #010101;
 
   /* Borders */
-  --border-color: #003B00;
+  --border-color: #003b00;
 
   /* Text */
-  --text-primary: #00FF00;
-  --text-muted: #008F00;
+  --text-primary: #00ff00;
+  --text-muted: #008f00;
 
   /* Accents */
-  --accent-blue: #00BFFF;
-  --accent-green: #32CD32;
-  --accent-red: #FF4136;
-  --accent-yellow: #FFDC00;
-  --accent-purple: #B10DC9;
-  --accent-cyan: #7FDBFF;
+  --accent-blue: #00bfff;
+  --accent-green: #32cd32;
+  --accent-red: #ff4136;
+  --accent-yellow: #ffdc00;
+  --accent-purple: #b10dc9;
+  --accent-cyan: #7fdbff;
 
   /* Cursor */
-  --cursor-color: #00FF00;
+  --cursor-color: #00ff00;
 }
 
-/* ============================= */
 /* 4. BASE STYLES */
-/* ============================= */
 
 body {
   font-family: "JetBrainsMono", monospace;
@@ -149,49 +158,78 @@ input {
   caret-color: var(--cursor-color);
 }
 
-
-/* ============================= */
 /* 5. TERMINAL STATES (SEMANTIC) */
-/* ============================= */
 
-.success { color: var(--accent-green); }
-.error { color: var(--accent-red); }
-.warning { color: var(--accent-yellow); }
-.info { color: var(--accent-blue); }
-.system { color: var(--accent-purple); }
+.success {
+  color: var(--accent-green);
+}
+.error {
+  color: var(--accent-red);
+}
+.warning {
+  color: var(--accent-yellow);
+}
+.info {
+  color: var(--accent-blue);
+}
+.system {
+  color: var(--accent-purple);
+}
 
 .flag {
   color: var(--accent-green);
   font-weight: 600;
 }
 
-
-/* ============================= */
 /* 6. TEXT UTILITIES */
-/* ============================= */
 
-.text-primary { color: var(--text-primary); }
-.text-muted { color: var(--text-muted); }
+.text-primary {
+  color: var(--text-primary);
+}
+.text-muted {
+  color: var(--text-muted);
+}
 
-.text-blue { color: var(--accent-blue); }
-.text-green { color: var(--accent-green); }
-.text-red { color: var(--accent-red); }
-.text-yellow { color: var(--accent-yellow); }
-.text-purple { color: var(--accent-purple); }
-.text-cyan { color: var(--accent-cyan); }
+.text-blue {
+  color: var(--accent-blue);
+}
+.text-green {
+  color: var(--accent-green);
+}
+.text-red {
+  color: var(--accent-red);
+}
+.text-yellow {
+  color: var(--accent-yellow);
+}
+.text-purple {
+  color: var(--accent-purple);
+}
+.text-cyan {
+  color: var(--accent-cyan);
+}
 
-.bold { font-weight: 700; }
-.dim { opacity: 0.6; }
-.underline { text-decoration: underline; }
+.bold {
+  font-weight: 700;
+}
+.dim {
+  opacity: 0.6;
+}
+.underline {
+  text-decoration: underline;
+}
 
-
-/* ============================= */
 /* 7. BACKGROUND UTILITIES */
-/* ============================= */
 
-.bg-main { background: var(--bg-main); }
-.bg-panel { background: var(--bg-panel); }
-.bg-soft { background: var(--bg-soft); }
+.bg-main {
+  background: var(--bg-main);
+}
+.bg-panel {
+  background: var(--bg-panel);
+}
+.bg-soft {
+  background: var(--bg-soft);
+}
 
 .bg-success {
   background: rgba(63, 185, 80, 0.1);
@@ -211,26 +249,36 @@ input {
   padding-left: 6px;
 }
 
-
-/* ============================= */
 /* 8. SPACING UTILITIES */
-/* ============================= */
 
-.mt-1 { margin-top: 4px; }
-.mt-2 { margin-top: 8px; }
-.mt-3 { margin-top: 12px; }
+.mt-1 {
+  margin-top: 4px;
+}
+.mt-2 {
+  margin-top: 8px;
+}
+.mt-3 {
+  margin-top: 12px;
+}
 
-.mb-1 { margin-bottom: 4px; }
-.mb-2 { margin-bottom: 8px; }
-.mb-3 { margin-bottom: 12px; }
+.mb-1 {
+  margin-bottom: 4px;
+}
+.mb-2 {
+  margin-bottom: 8px;
+}
+.mb-3 {
+  margin-bottom: 12px;
+}
 
-.p-1 { padding: 4px; }
-.p-2 { padding: 8px; }
+.p-1 {
+  padding: 4px;
+}
+.p-2 {
+  padding: 8px;
+}
 
-
-/* ============================= */
 /* 9. INTERACTION */
-/* ============================= */
 
 .clickable {
   cursor: pointer;
@@ -241,10 +289,7 @@ input {
   opacity: 0.8;
 }
 
-
-/* ============================= */
 /* 10. TERMINAL CONTAINER */
-/* ============================= */
 
 .terminal {
   width: fit-content;

@@ -31,6 +31,7 @@ function newTerminal() {
     input_terminal.setAttribute("id", "input_terminal");
     input_terminal.setAttribute("autocomplete", "off");
     input_terminal.setAttribute("spellcheck", "false");
+    input_terminal.size = 1; // Start with a size of 1
 
     terminalLine.appendChild(flag);
     terminalLine.appendChild(input_terminal);
@@ -39,6 +40,11 @@ function newTerminal() {
 
     input_terminal.focus();
     terminalLine.scrollIntoView({ block: 'end' });
+
+    input_terminal.addEventListener('input', () => {
+        // Adjust size based on content length, add 1 for better cursor visibility
+        input_terminal.size = input_terminal.value.length + 1;
+    });
 
     input_terminal.addEventListener("keydown", (e) => {
         if (e.key === "Enter") {

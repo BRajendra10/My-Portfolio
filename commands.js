@@ -69,7 +69,7 @@ function help(output_container) {
     let content = `<p class="info">Here are the available commands:</p><ul class="mt-2" style="margin-left: 10px;">`;
 
     for (const [cmd, desc] of Object.entries(commandList)) {
-        content += `<li><span class="text-cyan" style="width: 80px; display: inline-block;">${cmd}</span> - ${desc}</li>`;
+        content += `<li><span class="text-cyan command-name">${cmd}</span> - ${desc}</li>`;
     }
 
     content += `</ul>`;
@@ -154,8 +154,8 @@ function socials(output_container) {
     output_container.innerHTML = `
         <p>Here are my social links:</p>
         <ul>
-            <li class="mt-1"><span class="text-green" style="width: 80px; display: inline-block;">GitHub:</span> <a href="https://github.com/BRajendra10" target="_blank" class="clickable text-blue underline">github.com/BRajendra10</a></li>
-            <li class="mt-1"><span class="text-green" style="width: 80px; display: inline-block;">LinkedIn:</span> <a href="https://linkedin.com/in/behera-rajendra" target="_blank" class="clickable text-blue underline">linkedin.com/in/behera-rajendra</a></li>
+            <li class="mt-1"><span class="text-green social-label">GitHub:</span> <a href="https://github.com/BRajendra10" target="_blank" class="clickable text-blue underline">github.com/BRajendra10</a></li>
+            <li class="mt-1"><span class="text-green social-label">LinkedIn:</span> <a href="https://linkedin.com/in/behera-rajendra" target="_blank" class="clickable text-blue underline">linkedin.com/in/behera-rajendra</a></li>
         </ul>
     `;
 }

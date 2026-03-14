@@ -94,7 +94,7 @@ function projects(output_container) {
         <p class="text-yellow bold">My Projects:</p>
         
         <div class="mt-3">
-            <p class="text-primary bold">LMS Admin Dashboard (EdTech)</p>
+            <a href="https://github.com/BRajendra10/EdTech-backend" target="_blank" class="text-primary bold project project-lms">LMS Admin Dashboard (EdTech)</a>
             <p class="dim text-cyan">React.js, Redux, Node.js, Express.js, MongoDB, SSE, JWT, Tailwind CSS</p>
             <ul style="list-style-type: '- '; margin-left: 20px;" class="mt-1">
                 <li>The LMS is a platform for admins to manage courses and for students to enroll and consume content.</li>
@@ -105,7 +105,7 @@ function projects(output_container) {
         </div>
 
         <div class="mt-3">
-            <p class="text-primary bold">Real-Time Tic-Tac-Toe</p>
+            <a href="https://github.com/BRajendra10/tic-tac-toe-websocket" target="_blank" class="text-primary bold project project-socket">Real-Time Tic-Tac-Toe</a>
             <p class="dim text-cyan">React.js, Tailwind CSS, WebSockets</p>
             <ul style="list-style-type: '- '; margin-left: 20px;" class="mt-1">
                 <li>Developed a real-time two-player Tic-Tac-Toe game using WebSockets for live move synchronization.</li>
@@ -115,7 +115,7 @@ function projects(output_container) {
         </div>
 
         <div class="mt-3">
-            <p class="text-primary bold">Chat Application</p>
+            <a href="https://github.com/BRajendra10/chat-application" target="_blank" class="text-primary bold project project-chat">Chat Application</a>
             <p class="dim text-cyan">React.js, Redux Toolkit, Firebase (Auth & Firestore), Tailwind CSS</p>
             <ul style="list-style-type: '- '; margin-left: 20px;" class="mt-1">
                 <li>Built a real-time chat application with instant message synchronization using Firebase.</li>

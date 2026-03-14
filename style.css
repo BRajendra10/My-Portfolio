@@ -26,8 +26,14 @@ body {
 
 /* Make ASCII logo scrollable on small screens instead of breaking layout */
 .ascii-logo {
+  width: 100%;
   overflow-x: auto;
   -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+}
+
+.ascii-logo pre {
+  white-space: pre; /* prevent line wrapping */
+  min-width: 650px; /* lock the width of the ascii art */
 }
 
 .command-name,
@@ -156,6 +162,12 @@ input {
   color: var(--accent-cyan);
   font-family: inherit;
   caret-color: var(--cursor-color);
+}
+
+.project:hover::after {
+  content: '↗';
+  margin-left: 5px;
+  font-size: 14px;
 }
 
 /* 5. TERMINAL STATES (SEMANTIC) */

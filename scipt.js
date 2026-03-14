@@ -3,6 +3,9 @@ import { executeCommand } from "./commands.js";
 let input_terminal;
 let terminalOutput;
 
+const commandHistory = [];
+let pointer = commandHistory.length - 1;
+
 window.addEventListener("DOMContentLoaded", () => {
     terminalOutput = document.getElementById('terminal-output');
     const savedTheme = localStorage.getItem('terminal-theme');
@@ -47,13 +50,29 @@ function newTerminal() {
     });
 
     input_terminal.addEventListener("keydown", (e) => {
+        if (e.key === "ArrowUp" && pointer > 0) {
+            input_terminal.value = commandHistory[pointer];
+            input_terminal.size = input_terminal.value.length + 1;
+
+            pointer--;
+        } else if (e.key === "ArrowDown" && pointer < commandHistory.length - 1) {
+            input_terminal.value = commandHistory[pointer];
+            input_terminal.size = input_terminal.value.length + 1;
+
+            pointer++;
+        }
+
+        if (e.target.value.trim() === "") return;
+
         if (e.key === "Enter") {
             const command = e.target.value.trim();
+            commandHistory.push(command);
+            pointer = commandHistory.length - 1;
 
             const commandText = document.createElement("span");
             commandText.classList.add("text-cyan");
             commandText.innerText = command;
-            
+
             terminalLine.removeChild(input_terminal);
             terminalLine.appendChild(commandText);
             input_terminal = null;
